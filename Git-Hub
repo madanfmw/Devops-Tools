@@ -18,7 +18,7 @@ Git configuration:-
 Starting a project:-
 ------------------------
 
-1. To initiate a project in git. it will create .git directory under project directory.
+1. To initiate a project in git. it will create .git directory under the project directory.
 	" git init <project name> "
 2. git clone <project url>
 3. git remote add origin < repo url >
@@ -32,11 +32,11 @@ Day-to-day work: -
 current commit identifier, and changes pending commit. 
 2. Add a file to the staging area. Use. in place of the full file path to add all changed files from the current directory down into the directory tree.
 	" git add <file name> " or . (. means whole directory) or * (* means under that directory all files will upload) 
-3.	Show changes between working directory and staging area. --->	" git diff [file] "
+3. Show changes between the working directory and staging area. --->	" git diff [file] "
 4. Shows any changes between the staging area and the repository --->	" git diff --staged [file] "
-5. Discard changes in working directory. This operation is unrecoverable ---> " git checkout -- [file] "
+5. Discard changes in the working directory. This operation is unrecoverable ---> " git checkout -- [file] "
 6. Revert some paths in the index (or the whole index) to their state in HEAD. ---> " git reset [<path>.. .] "
-7.Create a new commit from changes added to the staging area.The commit must have a message! 
+7. Create a new commit from changes added to the staging area. The commit must have a message! 
 	" git commit -m " message name <file name> { file name is optional} "
 8. Remove tracked files from staging area to untracked files ---> " git restore --staged < file name > "
-9. Remove file from working directory and staging area ---> " git rm [file] "
+9. Remove the file from the working directory and staging area ---> " git rm [file] "
