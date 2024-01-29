@@ -1,0 +1,51 @@
+Linux commands:
+
+1. PWD - present working directory
+2. mkdir - folder creation
+3. touch - creating empty fiole
+4. ls -a - to check hidden files int he directory
+5. ls - listing the directories
+6. ls -R - list all files & directories use list in the sub-directories 
+7. cat > file.txt create the content without vi editor command
+8. vi - create content 
+9. cd - change directory
+10 cd .. - change directory backwards
+11 clear
+12. cat file.txt - show the content in the file
+
+
+
+===============================================================
+13. cat file1 file2 > file3 --> used for copy file1, file2 & stores in file3
+14. rm -r --> for deleting the directories
+15. rm file.txt --> for file deletion
+16. rm -rf --> force delete of directory / file
+17. less file1 --> display content page by page
+18. more file1 --> display content 
+19. head file1 --> top 10 lines displayed in the file
+20. tail file1 --> bottom 10 lines 
+21. top --> cpu utilization
+22. grep hello file.txt --> specific content in the file
+23. grep -r hello file.txt --> to check content in the dir
+24. du --> disk usage
+25. du -sh --> human readable disk usage info 
+26. df -h --> Disk space 
+27. ps -ef ---> process check 
+
+====================================================================
+
+28. kill -9 PID ---> to kill process with PID
+29. kill name --> kill process with name
+30. netstat --> to find port number
+31. Scp --> copy file from one server to another server 
+32. wget url --> to download file directly to linux
+33. curl --> request a url to return the response
+34. nano --> editor for file
+35. date --> check date & time
+36. calender --> check calender
+37. whoami --> check current user
+38 sudo apt-get update --> update the packages
+39. sudo apt-get install --> install the packages
+40. sudo apt-get remove ---> remove the packages
+41. docker --version --> to check the version
+
