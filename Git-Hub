@@ -38,5 +38,5 @@ current commit identifier, and changes pending commit.
 6. Revert some paths in the index (or the whole index) to their state in HEAD. ---> " git reset [<path>.. .] "
 7.Create a new commit from changes added to the staging area.The commit must have a message! 
 	" git commit -m " message name <file name> { file name is optional} "
-8. Remove tracked files from staging area to untracked files.
-	" git restore --staged < file name > "
+8. Remove tracked files from staging area to untracked files ---> " git restore --staged < file name > "
+9. Remove file from working directory and staging area ---> " git rm [file] "
