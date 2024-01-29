@@ -24,3 +24,19 @@ Starting a project:-
 3. git remote add origin < repo url >
 4. git remote -v 
 5. git remote rename <origin> <destination>
+
+Day-to-day work: -
+--------------------
+
+1. Check " git status " Displays the status of your working directory. Options include new, staged, and modified files. It will retrieve branch name,
+current commit identifier, and changes pending commit. 
+2. Add a file to the staging area. Use. in place of the full file path to add all changed files from the current directory down into the directory tree.
+	" git add <file name> " or . (. means whole directory) or * (* means under that directory all files will upload) 
+3.	Show changes between working directory and staging area. --->	" git diff [file] "
+4. Shows any changes between the staging area and the repository --->	" git diff --staged [file] "
+5. Discard changes in working directory. This operation is unrecoverable ---> " git checkout -- [file] "
+6. Revert some paths in the index (or the whole index) to their state in HEAD. ---> " git reset [<path>.. .] "
+7.Create a new commit from changes added to the staging area.The commit must have a message! 
+	" git commit -m " message name <file name> { file name is optional} "
+8. Remove tracked files from staging area to untracked files.
+	" git restore --staged < file name > "
