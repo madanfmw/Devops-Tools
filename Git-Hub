@@ -1,0 +1,26 @@
+Installation Steps:
+
+1. Create EC2 AWS linux server instance (select t2.micro server is enough) 
+2. Login into the server and switch to root user.
+3. for installing git, execute the cmd " yum install git -y " then server will install git.
+4. check whether git is installed or not using cmd " git --version "
+
+Operation commands in git:
++++++++++++++++++++++++++++
+
+Git configuration:-
+----------------------
+
+1. git config --global user.name <Your Name>
+2. git config --global user.email <you@example.com>
+
+
+Starting a project:-
+------------------------
+
+1. To initiate a project in git. it will create .git directory under project directory.
+	" git init <project name> "
+2. git clone <project url>
+3. git remote add origin < repo url >
+4. git remote -v 
+5. git remote rename <origin> <destination>
