@@ -15,3 +15,13 @@ Installation steps : -
 10. start the sonarqube by using cmd " ./sonar.sh start " and check the status " ./sonar.sh status"
  then open chrome browser and copy the IP address of EC2 instance with port number enter and it will open the GUI of sonar qube
 11. User name and password both are " admin & admin "
+
+------------------------------------------------------
+Issues:
+1. if we install mutliple java version sonarqube will not understand to run on which java version . in this case we have to edit the file 
+  to update exact java home path under <project dir>/conf/wrapper.conf
+[sonar@ip-172-31-19-34 conf]$ cat wrapper.conf
+# Path to JVM executable. By default it must be available in PATH.
+# Can be an absolute path, for example:
+#wrapper.java.command=/path/to/my/jdk/bin/java
+wrapper.java.command=/usr/lib/jvm/jre-1.8.0-openjdk/bin/java  } ---> here we have to update and then sonarqube will work
