@@ -1,1 +1,24 @@
+Maven Installation steps: -
+----------------------------------------------------------------------------
+1. Install java , because maven is depency with java software
+	" sudo yum install java-17-openjdk -y "
+2. Verify Java JDK installation using the following command
+	" java -version"
+3. Go to Maven Downlaods and get the download link of the latest package
+	" wget https://dlcdn.apache.org/maven/maven-3/3.9.6/binaries/apache-maven-3.9.6-bin.tar.gz "
+4. untar the tar file 
+	" tar -zxvf apache-maven-3.9.6-bin.tar.gz "
+5. set JAVA Home path for maven using a script file named maven.sh in the profile.d folder 
+	" vi /etc/profile.d/maven.sh "
+6. Add the following to the script and save the file in maven.sh
+	" export M2_HOME=/opt/maven
+	  export PATH=${M2_HOME}/bin:${PATH} "
+7. change the file permission to executable 
+	" chmod +x /etc/profile.d/maven.sh "
+8. Source the script for changes to take immediate effect.
+	" source /etc/profile.d/maven.sh " 
+9. Verify maven installation
+	" mvn -version "
 
+----------------------------------  oooooooorrrrrrrrrrrrrrrr  --------------------------------------------------
+" yum install maven -y "  enter this cmd directly aws linux server. it will install java and maven combinely 
