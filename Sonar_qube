@@ -1,17 +1,17 @@
 Installation steps : -
 
-creatre aws EC2 instance with t2.medium server have 4 GB RAM is must and open 9000 port for the server
+1. creatre aws EC2 instance with t2.medium server have 4 GB RAM is must and open 9000 port for the server
   {2GB for sonarqube running and Swap memory 1GB RAM }
-Open server and change to root user
+2. Open server and change to root user
   " sudo -s "
-need to update the dependices in the linux server by using cmd " yum update "
-Install java in linux " sudo yum install java-1.8.0 -y "
-Change directory to opt " cd /opt/ .
-Download the sonarqube community version by using the command " wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-7.6.zip "
-unzip the sonarqube-7.6.zip file and rename it to sonar directory
-add user in linux server like sonar " useradd sonar " and change ownership to sonar for sonar directory " chown -R sonar:sonar /opt/sonarqube " .
+3. need to update the dependices in the linux server by using cmd " yum update "
+4. Install java in linux " sudo yum install java-1.8.0 -y "
+5. Change directory to opt " cd /opt/ .
+6. Download the sonarqube community version by using the command " wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-7.6.zip "
+7. unzip the sonarqube-7.6.zip file and rename it to sonar directory
+8. add user in linux server like sonar " useradd sonar " and change ownership to sonar for sonar directory " chown -R sonar:sonar /opt/sonarqube " .
   " useradd -c "Sonar System User" -d /opt/sonar76 -g sonar -s /bin/bash sonar "
-switch to sonar user and come to the path  cd /opt/sonar76/sonarqube-7.6/bin/linux-x86-64/ directory.
- start the sonarqube by using cmd " ./sonar.sh start " and check the status " ./sonar.sh status"
+9. switch to sonar user and come to the path  cd /opt/sonar76/sonarqube-7.6/bin/linux-x86-64/ directory.
+10. start the sonarqube by using cmd " ./sonar.sh start " and check the status " ./sonar.sh status"
  then open chrome browser and copy the IP address of EC2 instance with port number enter and it will open the GUI of sonar qube
-User name and password both are " admin & admin "
+11. User name and password both are " admin & admin "
