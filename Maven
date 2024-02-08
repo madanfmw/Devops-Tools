@@ -33,5 +33,13 @@ Step4) Check the Maven version
 
 mvn -version
 
+--------------------------------------------------------------------------------------------------------------
+The following command manage to override the need for the test artifact in order to complete the goal:
+
+mvn -DskipTests=true  package
+And also you can use the below command :-
+
+mvn clean install -Dmaven.test.skip=true
+
 ----------------------------------  oooooooorrrrrrrrrrrrrrrr  --------------------------------------------------
 " yum install maven -y "  enter this cmd directly aws linux server. it will install java and maven combinely 
