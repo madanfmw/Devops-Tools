@@ -2,6 +2,7 @@ Maven Installation steps: -
 ----------------------------------------------------------------------------
 1. Install java , because maven is depency with java software
 	" sudo yum install java-17-openjdk -y "
+	" sudo amazon-linux-extras install java-openjdk11 "
 2. Verify Java JDK installation using the following command
 	" java -version"
 3. Go to Maven Downlaods and get the download link of the latest package
