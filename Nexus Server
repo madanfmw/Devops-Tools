@@ -1,0 +1,18 @@
+Nexus instllation:
+------------------------------------------------
+
+1. update the dependecies " yum update -y"
+2. Download nexus by using link
+	" https://download.sonatype.com/nexus/3/nexus-3.65.0-02-unix.tar.gz "
+3. untar the download file " tar -xhvf nexus-3.65.0-02-unix.tar.gz "
+4. add nexus user because nexus wont run with root user " useradd nexus "
+5. Change the dir Nexus to nexus ownership and give 775 permission inside dir
+	" chown -R nexus: /opt/Nexus
+	   chmod -R 775 /opt/Nexus "
+6. Open /opt/nexus/bin/nexus.rc file and  uncomment run_as_user parameter and set as nexus user.
+
+		" vi /opt/nexus/bin/nexus.rc
+		  run_as_user="nexus" "
+7. Start nexus server " ./nexus start "
+	
+8. Check in web console by using url with 8081 port number
