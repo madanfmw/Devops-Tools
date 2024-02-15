@@ -24,7 +24,7 @@ source ~/.bash_profile
 For All Users
 ---------------------- 
 vi /etc/profile
-export M2_HOME=/apache-maven-3.9.5
+export M2_HOME=/apache-maven-3.9.6
 export PATH=$PATH:$M2_HOME/bin
 
 source /etc/profile
