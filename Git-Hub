@@ -40,3 +40,13 @@ current commit identifier, and changes pending commit.
 	" git commit -m " message name <file name> { file name is optional} "
 8. Remove tracked files from staging area to untracked files ---> " git restore --staged < file name > "
 9. Remove the file from the working directory and staging area ---> " git rm [file] "
+
+
++++++++++++++++++++++++  ERROR's  ++++++++++++++++++++++++++++++++++++
+Adding remote repository to local server path got this error and resolution :
+
+[root@ip-172-31-16-103 madan]# git remote add origin https://github.com/madanfmw/Devops-Tools.git
+fatal: detected dubious ownership in repository at '/home/madan'
+To add an exception for this directory, call:
+
+        git config --global --add safe.directory /home/madan
