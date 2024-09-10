@@ -50,3 +50,7 @@ fatal: detected dubious ownership in repository at '/home/madan'
 To add an exception for this directory, call:
 
         git config --global --add safe.directory /home/madan
+################ SSH Keys Add to git for user ##########################
+1. Generate the ssh keys in unix server.
+	ssh-keygen -t ed25519 -C "your_email@example.com"
+
