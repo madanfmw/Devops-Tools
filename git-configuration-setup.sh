@@ -12,3 +12,4 @@ echo git configuration setup is completed
 ### GIT Config ###########
 git config --list
 
+echo testing phase
