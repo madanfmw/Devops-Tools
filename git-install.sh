@@ -8,6 +8,6 @@ echo install git
 
 sudo yum install git -y
 
-git init /home/ec2-user/Urealengine/
+git init /home/ec2-user/Unrealengine/
 
 echo GIT Installation is completed
