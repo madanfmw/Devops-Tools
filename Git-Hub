@@ -53,4 +53,6 @@ To add an exception for this directory, call:
 ################ SSH Keys Add to git for user ##########################
 1. Generate the ssh keys in unix server.
 	ssh-keygen -t ed25519 -C "your_email@example.com"
+2. add ssh-key to main keys
+	ssh-add ~/.ssh/id_ed25519
 
