@@ -27,3 +27,17 @@
 
 8. You can check the status of the Jenkins service using the command:
 " sudo systemctl status jenkins "
+------------- Another Method ----------------------------------
+Download Jenkins File from jenkins website we use link 
+" wget https://get.jenkins.io/war-stable/2.462.2/jenkins.war "
+change jenkins.war file to 775
+" chmod 775 jenkins.war "
+Download the JDK file from oracle website
+" wget https://download.oracle.com/java/17/latest/jdk-17_linux-x64_bin.rpm "
+change JDK permission and install java
+" chmod 775 jdk-17_linux-x64_bin.rpm "
+" rpm -i jdk-17_linux-x64_bin.rpm "
+check java version 
+" java --version "
+run the jenkins 
+" java -jar jenkins "
