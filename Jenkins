@@ -41,3 +41,5 @@ check java version
 " java --version "
 run the jenkins 
 " java -jar jenkins "
+check the java versions alternatives in amazon linux 
+ " sudo alternatives --config java"
