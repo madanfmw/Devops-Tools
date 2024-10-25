@@ -1,5 +1,5 @@
 # Use Amazon Linux 2 as the base image
-FROM amazonlinux:2
+FROM amazonlinux
 
 # Install Nginx and clean up unnecessary files
 RUN yum -y update && \
