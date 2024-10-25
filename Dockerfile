@@ -3,9 +3,9 @@ FROM amazonlinux:2
 
 # Install Nginx and clean up unnecessary files
 RUN yum -y update && \
+    yum -y install epel-release && \
     yum -y install nginx && \
-    yum clean all
-
+    
 # Copy the Nginx configuration file (optional, if you have a custom config)
 # COPY ./nginx.conf /etc/nginx/nginx.conf
 
