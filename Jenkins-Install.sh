@@ -6,8 +6,7 @@ sudo yum update -y
 
 # Install Java (Amazon Linux 2 uses Amazon Corretto 8/11 as the default JDK)
 echo "Installing Java..."
-sudo amazon-linux-extras enable corretto8
-sudo yum install java-1.8.0-amazon-corretto -y
+sudo dnf install java-17-amazon-corretto -y
 
 # Verify Java installation
 echo "Verifying Java installation..."
