@@ -52,10 +52,13 @@ sudo systemctl enable docker
 echo "Installing Jenkins..."
 
 # Add Jenkins repository and key
-curl -fsSL https://pkg.jenkins.io/debian/jenkins.io.key | sudo tee /etc/apt/trusted.gpg.d/jenkins.asc
+sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+  https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
 
 # Add the Jenkins repository
-echo "deb http://pkg.jenkins.io/debian/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/jenkins.list
+echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
 
 # Update package index
 sudo apt update -y
