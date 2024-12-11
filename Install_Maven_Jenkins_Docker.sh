@@ -13,7 +13,7 @@ sudo apt install -y \
     software-properties-common \
     lsb-release \
     gnupg2 \
-    openjdk-11-jdk \
+    fontconfig openjdk-17-jre \
     wget \
     unzip
 
