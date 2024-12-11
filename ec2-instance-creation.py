@@ -77,7 +77,7 @@ As part of DevOps Training, this script will help you create an EC2 Instance!
     print(f"Selected Instance Type: {instance_type}")
 
     # AMI ID (default value)
-    ami_id = "ami-0614680123427b75e"
+    ami_id = "ami-053b12d3152c0cc71"
     print(f"Using default AMI ID: {ami_id}")
 
     # Instance Name
