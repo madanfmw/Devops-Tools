@@ -77,5 +77,7 @@ sudo systemctl status jenkins
 
 # Display Jenkins setup info
 echo "Jenkins is installed. To complete the setup, open your browser and visit http://<your-server-ip>:8080"
-echo "Retrieve Jenkins unlock key by running:"
-echo "sudo cat /var/lib/jenkins/secrets/initialAdminPassword"
+echo "Retrieve Jenkins Password"
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+########################  Successfully Installed Maven, Jenkins, Dockers and Running ########################################
