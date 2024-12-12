@@ -1,7 +1,7 @@
 ########### Post build notification to slack  ###########
 
 def COLOR_MAP = [ 
-	'FAILURE' : 'danger'
+	'FAILURE' : 'danger',
 	'SUCCESS' : 'good'
 	
 	]
