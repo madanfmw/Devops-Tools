@@ -1,0 +1,17 @@
+########### Post build notification to slack  ###########
+
+def COLOR_MAP = [ 
+	'FAILURE' : 'danger'
+	'SUCCESS' : 'good'
+	
+	]
+post {
+	 always {
+	 echo 'Slack Notification'
+	 slacksend (
+		channel: '#ci-cd-buildstatus'
+		color: COLOR_MAP[currentBuild.currentResult],
+		message: "*{currentBuild.currentResult}:* Job ${env.JOB_NAME} \n build ${env.BUILD_NUMBER} \n More info at: ${env.BUILD_URL}
+		)
+	 }
+}
