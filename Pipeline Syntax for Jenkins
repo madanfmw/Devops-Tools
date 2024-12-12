@@ -1,0 +1,76 @@
+# Tools used in this pipeline git-hub, Maven, Docker, Slack
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+def COLOR_MAP = [ 
+	'FAILURE' : 'danger'
+	'SUCCESS' : 'good'
+	
+	]
+pipeline {
+    agent any
+    environment {
+        // Define environment variables
+        SLACK_CHANNEL = 'ci-cd-buildstatus'  // Slack channel for notifications
+        SLACK_TOKEN = 'https://hooks.slack.com/services/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' // Slack webhook URL
+        DOCKER_IMAGE_NAME = 'unreal-engines'
+        DOCKER_REGISTRY = 'docker.io/maraboyinimadan'  // Docker Registry (e.g., DockerHub or your private registry)
+    }
+    stages {
+        stage('GIT-Checkout') {
+            steps {
+                // Checkout code from Git repository
+                git branch: 'dev', url: 'https://github.com/madanfmw/taxi-booking.git'
+            }
+        }
+        stage('Get Commit Hash') {
+            steps {
+                script {
+                    // Fetch the latest commit hash
+                    env.GIT_COMMIT = sh(script: "git rev-parse --short HEAD", returnStdout: true).trim()
+                }
+            }
+        }
+        stage('Build') {
+            steps {
+                script {
+                    // Build the Maven project
+                    sh 'mvn clean package'
+                }
+            }
+        }
+        stage('Docker Build') {
+            steps {
+                script {
+                    // Build Docker image using the GIT_COMMIT environment variable
+                    sh """
+                    docker build -t ${DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}:${GIT_COMMIT} .
+                    """
+                }
+            }
+        }
+        stage('Docker Push') {
+            steps {
+                script {
+                    // Login to Docker using Jenkins Credentials Plugin
+                    withCredentials([usernamePassword(credentialsId: 'docker-cred', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+                        // Push the Docker image to the registry
+                        def imageTag = "${DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}:${GIT_COMMIT}"
+                        sh "docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}"
+                        sh "docker push ${imageTag}"
+                    }
+                }
+            }
+        }
+        stage('Notify Slack') {
+			post {
+				always {
+				echo 'Slack Notification'
+				slacksend (
+				channel: '#ci-cd-buildstatus'
+				color: COLOR_MAP[currentBuild.currentResult],
+				message: "*{currentBuild.currentResult}:* Job ${env.JOB_NAME} \n build ${env.BUILD_NUMBER} \n More info at: ${env.BUILD_URL}
+				)
+			}
+		}
+
+    }
+}
