@@ -25,6 +25,9 @@ sudo apt install -y maven
 echo "Maven version:"
 mvn -v
 
+# Add jenkins user to Docker group
+sudo usermod -aG docker jenkins
+
 # Install Docker
 echo "Installing Docker..."
 # Add Docker's official GPG key
