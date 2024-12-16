@@ -42,3 +42,8 @@ shared:
 EOL
 
 echo "Configuration complete. system.yaml has been updated successfully."
+# create postgres docker image and run as container
+docker run --name postgres -itd -e POSTGRES_USER=artifactory -e POSTGRES_PASSWORD=password -e POSTGRES_DB=artifactorydb -p 5432:5432 library/postgres
+
+# create JFrog artifactory image and run as container
+docker run --name artifactory -v $JFROG_HOME/artifactory/var/:/var/opt/jfrog/artifactory -d -p 8081:8081 -p 8082:8082 releases-docker.jfrog.io/jfrog/artifactory-oss
