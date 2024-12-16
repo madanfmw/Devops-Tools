@@ -33,9 +33,6 @@ sudo apt install -y maven
 echo "Maven version:"
 mvn -v
 
-# Add jenkins user to Docker group
-sudo usermod -aG docker jenkins
-
 # Install Docker
 echo "Installing Docker..."
 # Add Docker's official GPG key
@@ -85,6 +82,9 @@ sudo systemctl enable jenkins
 # Display Jenkins status
 echo "Jenkins status:"
 sudo systemctl status jenkins
+
+# Add jenkins user to Docker group
+sudo usermod -aG docker jenkins
 
 # Display Jenkins setup info
 echo "Jenkins is installed. To complete the setup, open your browser and visit http://<your-server-ip>:8080"
