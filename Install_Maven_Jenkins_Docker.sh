@@ -16,6 +16,14 @@ sudo apt install -y \
     fontconfig openjdk-17-jre \
     wget \
     unzip
+    
+# Install Java (Amazon Linux 2 uses Amazon Corretto 8/11 as the default JDK)
+echo "Installing Java..."
+sudo dnf install java-17-amazon-corretto -y
+
+# Verify Java installation
+echo "Verifying Java installation..."
+java -version
 
 # Install Maven
 echo "Installing Maven..."
