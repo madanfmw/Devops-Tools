@@ -1,24 +1,35 @@
 #!/bin/bash
 
 # Variables
-JFROG_HOME="/path/to/jfrog"  # Replace with your actual JFROG_HOME path
+JFROG_HOME="$JFROG_HOME"       # Replace with your JFROG_HOME path
 SYSTEM_YAML_PATH="$JFROG_HOME/artifactory/var/etc/system.yaml"
-EC2_PUBLIC_IP="your-ec2-public-ip"  # Replace with your EC2 Public IP
+DB_NAME="artifactorydb"
 DB_USERNAME="artifactory"
 DB_PASSWORD="password"
-DB_NAME="artifactorydb"
 
-# Step 1: Create directories and set permissions
-echo "Creating necessary directories..."
+# Step 1: Retrieve Public IP Address
+echo "Retrieving Public IP Address..."
+EC2_PUBLIC_IP=$(curl -s ifconfig.me)
+
+if [ -z "$EC2_PUBLIC_IP" ]; then
+    echo "Failed to retrieve public IP. Please check your internet connection or try again."
+    exit 1
+fi
+echo "Your Public IP Address is: $EC2_PUBLIC_IP"
+
+# Step 2: Create JFrog Home Directory
+echo "Creating JFrog Home Directory..."
 mkdir -p "$JFROG_HOME/artifactory/var/etc/"
-cd "$JFROG_HOME/artifactory/var/etc/" || exit 1
 
-# Step 2: Create the system.yaml file
+# Step 3: Create the system.yaml file
 echo "Creating system.yaml file..."
-touch ./system.yaml
+touch "$SYSTEM_YAML_PATH"
+
+# Step 4: Change ownership of JFrog Home directory
+echo "Changing ownership of JFrog Home Directory..."
 chown -R 1030:1030 "$JFROG_HOME/artifactory/var"
 
-# Step 3: Configure database connection
+# Step 5: Configure database connection in system.yaml
 echo "Configuring database connection in system.yaml..."
 cat <<EOL >"$SYSTEM_YAML_PATH"
 shared:
@@ -30,4 +41,4 @@ shared:
     password: $DB_PASSWORD
 EOL
 
-echo "Database configuration is complete."
+echo "Configuration complete. system.yaml has been updated successfully."
