@@ -1,5 +1,8 @@
 #!/bin/bash
-
+#Install docker
+yum install docker -y 
+systemctl start docker
+systemctl enable docker
 # Variables
 JFROG_HOME="/opt/jfrog"  # Replace with the correct JFROG_HOME path if not set
 SYSTEM_YAML_PATH="$JFROG_HOME/artifactory/var/etc/system.yaml"
